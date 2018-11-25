@@ -84,7 +84,7 @@ module Plist
           else
             inner_tags = []
 
-            element.keys.sort_by{|k| k.to_s }.each do |k|
+            element.keys.each do |k|
               v = element[k]
               inner_tags << tag('key', CGI.escapeHTML(k.to_s), options)
               inner_tags << plist_node(v, options)
